@@ -4,11 +4,12 @@ import React from "react";
 import {
   FaXTwitter,
   FaGithub,
-  FaInstagram,
   FaRss,
   FaLinkedinIn,
+  FaOrcid,
 } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
+import { SiGooglescholar, SiResearchgate } from "react-icons/si";
 import { metaData, socialLinks } from "app/lib/config";
 
 const YEAR = new Date().getFullYear();
@@ -24,11 +25,13 @@ function SocialLink({ href, icon: Icon }) {
 function SocialLinks() {
   return (
     <div className="flex text-lg gap-3.5 float-right transition-opacity duration-300 hover:opacity-90">
-      <SocialLink href={socialLinks.twitter} icon={FaXTwitter} />
-      <SocialLink href={socialLinks.github} icon={FaGithub} />
-      <SocialLink href={socialLinks.instagram} icon={FaInstagram} />
-      <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
       <SocialLink href={socialLinks.email} icon={TbMailFilled} />
+      <SocialLink href={socialLinks.googleScholar} icon={SiGooglescholar} />
+      <SocialLink href={socialLinks.orcid} icon={FaOrcid} />
+      <SocialLink href={socialLinks.researchGate} icon={SiResearchgate} />
+      <SocialLink href={socialLinks.github} icon={FaGithub} />
+      <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
+      <SocialLink href={socialLinks.twitter} icon={FaXTwitter} />
       <a href="/rss.xml" target="_self">
         <FaRss />
       </a>
@@ -42,11 +45,11 @@ export default function Footer() {
       <time>© {YEAR}</time>{" "}
       <a
         className="no-underline"
-        href={socialLinks.twitter}
+        href={socialLinks.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {metaData.title}
+        {metaData.name}
       </a>
       <style jsx>{`
         @media screen and (max-width: 480px) {
